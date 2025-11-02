@@ -47,8 +47,13 @@ jobs:
       - name: List Gradle tasks
         run: ./gradlew help --no-daemon --stacktrace --warning-mode all
 
-      - name: Run ktlint
-        run: ./gradlew ktlintCheck --no-daemon --stacktrace --warning-mode all
+      - name: Run ktlint (Action)
+        uses: ScaCap/action-ktlint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          android: true
+          pattern: "app/src/**/*.kt"
+          version: "1.2.1"   # versión estable del CLI
 
       - name: Run Android Lint (debug)
         run: ./gradlew lintDebug --no-daemon --stacktrace --warning-mode all
@@ -68,5 +73,13 @@ jobs:
             app/build/reports/ktlint/**/*
             app/build/reports/lint-results-debug.html
             app/build/reports/tests/**/*
+          if-no-files-found: ignore
+
+      - name: Upload ktlint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ktlint-report
+          path: ktlint-report.xml
           if-no-files-found: ignore
 
