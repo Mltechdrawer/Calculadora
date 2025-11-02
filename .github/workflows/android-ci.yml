@@ -52,8 +52,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           android: true
-          pattern: "app/src/**/*.kt"
-          version: "1.2.1"   # versión estable del CLI
+          file_glob: "app/src/**/*.kt"   # <-- solo archivos .kt del código
+          ktlint_version: "1.2.1"        # <-- nombre correcto del input
+          fail_on_error: true
 
       - name: Run Android Lint (debug)
         run: ./gradlew lintDebug --no-daemon --stacktrace --warning-mode all
