@@ -1,7 +1,24 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jlleitschuh.gradle.ktlint")
 }
+
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
+        ktlint {
+            android.set(true)
+            ignoreFailures.set(false) // si hay errores, falla el job
+            reporters {
+                reporter(ReporterType.PLAIN)
+                reporter(ReporterType.CHECKSTYLE)
+                reporter(ReporterType.SARIF)
+            }
+            filter {
+                exclude("**/generated/**")
+            }
+        }
+
 
 android {
     namespace = "com.agenciacristal.calculadora"
