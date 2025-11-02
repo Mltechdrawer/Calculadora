@@ -3,20 +3,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("org.jlleitschuh.gradle.ktlint")
-}
-
-ktlint {
-    android.set(true)
-    ignoreFailures.set(false)
-    /*reporters {
-        reporter(ReporterType.PLAIN)
-        reporter(ReporterType.CHECKSTYLE)
-        reporter(ReporterType.SARIF)
-    }*/
-    filter {
-        exclude("**/generated/**")
-    }
 }
 
 android {
