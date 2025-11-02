@@ -24,27 +24,40 @@ jobs:
       - name: Make gradlew executable (safety)
         run: chmod +x gradlew
 
-      # === NUEVO: Android SDK ===
+      # Android SDK
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      # Ajusta estas versiones a tu proyecto si difieren
-      - name: Install Android platform & build-tools
+      - name: Install Android platforms & build-tools
         run: |
-          sdkmanager --install "platform-tools" "platforms;android-33" "build-tools;33.0.2"
-      # === FIN NUEVO ===
+          yes | sdkmanager --licenses
+          sdkmanager --install "platform-tools"
+          sdkmanager --install "platforms;android-33"
+          sdkmanager --install "build-tools;33.0.0" "build-tools;33.0.1" "build-tools;33.0.2"
+          sdkmanager --install "extras;google;m2repository" || true
+          sdkmanager --install "extras;android;m2repository" || true
 
-      - name: Set up Gradle
+      # Desactivar caché de Gradle para evitar warnings 400 (TEMPORAL)
+      - name: Set up Gradle (no cache)
         uses: gradle/actions/setup-gradle@v3
+        with:
+          cache-disabled: true
+
+      # Diagnóstico y tareas con stacktrace
+      - name: Gradle version
+        run: ./gradlew --version
+
+      - name: List Gradle tasks
+        run: ./gradlew help --no-daemon --stacktrace --warning-mode all
 
       - name: Run Android Lint (debug)
-        run: ./gradlew lintDebug
+        run: ./gradlew lintDebug --no-daemon --stacktrace --warning-mode all
 
       - name: Run unit tests (debug)
-        run: ./gradlew testDebugUnitTest
+        run: ./gradlew testDebugUnitTest --no-daemon --stacktrace --warning-mode all
 
       - name: Build (debug)
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --no-daemon --stacktrace --warning-mode all
 
       - name: Upload reports
         if: always()
@@ -55,3 +68,4 @@ jobs:
             app/build/reports/lint-results-debug.html
             app/build/reports/tests/**/*
           if-no-files-found: ignore
+
