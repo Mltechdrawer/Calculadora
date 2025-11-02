@@ -1,4 +1,4 @@
-import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+// import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("com.android.application")
@@ -9,11 +9,11 @@ plugins {
 ktlint {
     android.set(true)
     ignoreFailures.set(false)
-    reporters {
+    /*reporters {
         reporter(ReporterType.PLAIN)
         reporter(ReporterType.CHECKSTYLE)
         reporter(ReporterType.SARIF)
-    }
+    }*/
     filter {
         exclude("**/generated/**")
     }
