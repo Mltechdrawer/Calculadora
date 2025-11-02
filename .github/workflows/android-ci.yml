@@ -21,6 +21,19 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Make gradlew executable (safety)
+        run: chmod +x gradlew
+
+      # === NUEVO: Android SDK ===
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      # Ajusta estas versiones a tu proyecto si difieren
+      - name: Install Android platform & build-tools
+        run: |
+          sdkmanager --install "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+      # === FIN NUEVO ===
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v3
 
