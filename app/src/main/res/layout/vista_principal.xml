@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <!-- Entrada actual -->
+    <TextView
+        android:id="@+id/operandoCalculadora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="32sp"
+        android:textColor="#424242"
+        android:gravity="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/resultadoCalculadora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="40sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/operandoCalculadora"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Teclado en Grid 4x5 -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/teclado"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        app:alignmentMode="alignBounds"
+        app:useDefaultMargins="true"
+        app:columnCount="4"
+        app:rowCount="5"
+        app:layout_constraintTop_toBottomOf="@id/resultadoCalculadora"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Fila 1 -->
+        <com.google.android.material.button.MaterialButton
+            android:text="7" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="8" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="9" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="+" android:onClick="cambiarOperador"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#FF5722" app:cornerRadius="12dp"/>
+
+        <!-- Fila 2 -->
+        <com.google.android.material.button.MaterialButton
+            android:text="4" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="5" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="6" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="-" android:onClick="cambiarOperador"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#FF5722" app:cornerRadius="12dp"/>
+
+        <!-- Fila 3 -->
+        <com.google.android.material.button.MaterialButton
+            android:text="1" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="2" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="3" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="X" android:onClick="cambiarOperador"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#FF5722" app:cornerRadius="12dp"/>
+
+        <!-- Fila 4 -->
+        <com.google.android.material.button.MaterialButton
+            android:text="C" android:onClick="borrar"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E53935" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="0" android:onClick="seleccionarNumero"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textColor="@android:color/white"
+            app:backgroundTint="#424242" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="=" android:onClick="igual"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#FF9800" app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="/" android:onClick="cambiarOperador"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#FF5722" app:cornerRadius="12dp"/>
+
+        <!-- Fila 5: CA ocupa toda la fila -->
+        <com.google.android.material.button.MaterialButton
+            android:text="CA" android:onClick="borrar"
+            android:layout_width="0dp" android:layout_height="0dp"
+            android:minWidth="0dp" android:minHeight="0dp"
+            android:layout_gravity="fill" app:layout_columnSpan="4" app:layout_rowWeight="1"
+            android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#B71C1C" app:cornerRadius="12dp"/>
+    </androidx.gridlayout.widget.GridLayout>
+
+    <!-- FOOTER -->
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="by SENATI/ETI @wcuro"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
