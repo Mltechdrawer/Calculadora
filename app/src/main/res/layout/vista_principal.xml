@@ -52,7 +52,7 @@
         <!-- Fila 1 -->
         <com.google.android.material.button.MaterialButton
             android:text="7" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -60,7 +60,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="8" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -68,7 +68,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="9" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -76,7 +76,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="+" android:onClick="cambiarOperador"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textStyle="bold"
@@ -86,7 +86,7 @@
         <!-- Fila 2 -->
         <com.google.android.material.button.MaterialButton
             android:text="4" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -94,7 +94,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="5" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -102,7 +102,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="6" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -110,7 +110,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="-" android:onClick="cambiarOperador"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textStyle="bold"
@@ -120,7 +120,7 @@
         <!-- Fila 3 -->
         <com.google.android.material.button.MaterialButton
             android:text="1" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -128,7 +128,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="2" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -136,7 +136,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="3" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -144,7 +144,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="X" android:onClick="cambiarOperador"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textStyle="bold"
@@ -154,7 +154,7 @@
         <!-- Fila 4 -->
         <com.google.android.material.button.MaterialButton
             android:text="C" android:onClick="borrar"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textStyle="bold"
@@ -163,7 +163,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="0" android:onClick="seleccionarNumero"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textColor="@android:color/white"
@@ -171,7 +171,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="=" android:onClick="igual"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textStyle="bold"
@@ -180,7 +180,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="/" android:onClick="cambiarOperador"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnWeight="1" app:layout_rowWeight="1"
             android:textSize="22sp" android:textStyle="bold"
@@ -190,7 +190,7 @@
         <!-- Fila 5: CA ocupa toda la fila -->
         <com.google.android.material.button.MaterialButton
             android:text="CA" android:onClick="borrar"
-            app:layout_width="0dp" app:layout_height="0dp"
+            android:layout_width="0dp" android:layout_height="0dp"
             android:minWidth="0dp" android:minHeight="0dp"
             app:layout_gravity="fill" app:layout_columnSpan="4" app:layout_rowWeight="1"
             android:textSize="22sp" android:textStyle="bold"
