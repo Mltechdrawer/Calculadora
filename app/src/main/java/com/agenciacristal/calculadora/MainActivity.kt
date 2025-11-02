@@ -1,15 +1,17 @@
 package com.agenciacristal.calculadora
+
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
+
 class MainActivity : AppCompatActivity() {
     private var operacionActual = ""
     private var primerNumero: Double = Double.NaN
-    private lateinit var operandoCalculadora: TextView   // entrada que el usuario teclea
-    private lateinit var resultadoCalculadora: TextView  // resultado/acumulado
+    private lateinit var operandoCalculadora: TextView // entrada que el usuario teclea
+    private lateinit var resultadoCalculadora: TextView // resultado/acumulado
     private lateinit var formatoDecimal: DecimalFormat
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
