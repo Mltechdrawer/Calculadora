@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var operandoCalculadora: TextView // entrada que el usuario teclea
     private lateinit var resultadoCalculadora: TextView // resultado/acumulado
     private lateinit var formatoDecimal: DecimalFormat
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.vista_principal)
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             resultadoCalculadora.text = it.getString("resultado", "")
         }
     }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putDouble("primerNumero", primerNumero)
@@ -36,7 +38,9 @@ class MainActivity : AppCompatActivity() {
         outState.putString("entrada", operandoCalculadora.text.toString())
         outState.putString("resultado", resultadoCalculadora.text.toString())
     }
+
     private fun tienePrimerNumero() = !primerNumero.isNaN()
+
     fun cambiarOperador(v: View) {
         val boton = v as Button
         // Si hay entrada o ya existe un acumulado, consolidar antes de cambiar operador
@@ -54,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             operandoCalculadora.text = ""
         }
     }
+
     fun calcular() {
         // Si no hay entrada nueva, no hay nada que aplicar
         if (operandoCalculadora.text.isEmpty()) return
@@ -81,11 +86,13 @@ class MainActivity : AppCompatActivity() {
         // Limpia la entrada para continuar operando
         operandoCalculadora.text = ""
     }
+
     fun seleccionarNumero(v: View) {
         // Solo concatena el dígito (sin punto decimal)
         val texto = (v as Button).text.toString()
         operandoCalculadora.text = operandoCalculadora.text.toString() + texto
     }
+
     fun igual(@Suppress("UNUSED_PARAMETER") v: View) {
         calcular()
         if (tienePrimerNumero()) {
@@ -93,6 +100,7 @@ class MainActivity : AppCompatActivity() {
         }
         operacionActual = ""
     }
+
     fun borrar(v: View) {
         val etiqueta = (v as Button).text.toString().trim()
         if (etiqueta == "C") {
