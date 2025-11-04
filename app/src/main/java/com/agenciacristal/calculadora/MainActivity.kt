@@ -6,11 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
-
-
-
-
-class MainActivity    : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private var operacionActual = ""
     private var primerNumero: Double = Double.NaN
