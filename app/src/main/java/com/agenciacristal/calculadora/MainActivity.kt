@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
+
     private var operacionActual = ""
     private var primerNumero: Double = Double.NaN
     private lateinit var operandoCalculadora: TextView // entrada que el usuario teclea
